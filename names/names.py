@@ -53,15 +53,19 @@ f.close()
 bst = sortedArrayToBST(names_1)
 
 f = open('names_2.txt', 'r')
-names_2 = f.read().split("\n")  # List containing 10000 names
+names_2 = sorted(f.read().split("\n"))  # List containing 10000 names
 f.close()
 
+# #STRETCH
+# set1 = set(names_1)
+# set2 = set(names_2)
+# duplicates = set1.intersection(set(names_2))  # Return the list of duplicates in this data structure
 
-duplicates = []  # Return the list of duplicates in this data structure
-
+duplicates = []
 for name in names_2:
     if bst.contains(name):
         duplicates.append(name)
+
 
 end_time = time.time()
 
